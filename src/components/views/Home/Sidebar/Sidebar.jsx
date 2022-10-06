@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Sidebar.css"
 import {Link} from "react-router-dom"
-import {Ship, Market, Planets, Soldiers} from "../../../svgs/svgsSidebar"
+import {Ship, Market, Planets, Soldiers, ClaimFunds} from "../../../svgs/svgsSidebar"
 
 
 function Sidebar() {
@@ -35,6 +35,12 @@ function Sidebar() {
             <Link to="/home/marketplace">
               <Market width="25px" />
               <p>MARKET</p>
+            </Link>
+          </li>
+          <li>
+            <Link to="/home/claimFunds">
+              <Market width="25px" />
+              <p>CLAIMFUNDS</p>
             </Link>
           </li>
         </ul>

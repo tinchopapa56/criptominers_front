@@ -20,7 +20,8 @@
 
 /**/
 .soldiers{
-    background-color: var(--color1);
+    background-color: var(--colorDark);
+    color: white;
 }
 .soldiers > div {
     border: dashed 2px salmon;
