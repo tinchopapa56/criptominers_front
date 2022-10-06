@@ -13,7 +13,7 @@ import {useRef,useState,useEffect} from "react";
 function Home() {
 
   const [walletConected, setWalletConnected] = useState(false);
-  
+  const [ethBalance, setEthBalance] = useState(0);
   const web3ModalRef = useRef();
 
 
@@ -55,12 +55,21 @@ function Home() {
   }
   /*END*/
 
+  // const getEthBalance = async()=>{
+  //   try{
+  //     //get balance metamask
+  //     //contract instance
 
+  //     setEthBalance();
+  //   }catch(err){
+  //     console.error(err);
+  //   }
+  // } 
 
 
   return (
     <div className="home">
-        <Navbar />
+        <Navbar tokenBalance={ethBalance} />
         <div className="home-container">
           <Sidebar />
           <div className="content-container">
