@@ -1,0 +1,48 @@
+.home{
+    height: 100vh;
+}
+.home-container{
+    height: 92vh;
+    display: flex;
+}
+.content-container {
+    display: flex;
+    flex-direction: column;
+    /* gap: 4em; */
+    height: 100%;
+    width: 100%;
+    padding: 0 1em;
+  }
+
+.marketplace{
+    background-color: var(--color1);
+}
+
+/**/
+.soldiers{
+    background-color: var(--color1);
+}
+.soldiers > div {
+    border: dashed 2px salmon;
+    display: flex;
+    justify-content: space-around;
+}
+.soldiers > section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+@media (max-width: 1025px) {
+    .soldiers > div {
+        flex-direction: column;
+        align-items: center ;
+    }
+}
+/* */
+.shuttles{
+    background-color: var(--color1);
+}
+.planets{
+    background-color: var(--color1);
+}
+

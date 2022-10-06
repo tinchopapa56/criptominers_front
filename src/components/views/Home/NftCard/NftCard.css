@@ -1,0 +1,6 @@
+.nftCard{
+    border: 3px solid green;
+}
+.nftCard > img {
+    width: 50%;
+}

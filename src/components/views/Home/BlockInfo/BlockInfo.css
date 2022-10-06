@@ -1,0 +1,15 @@
+.blockInfo{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid blue;
+    width: 70%;
+    padding: 2em;
+
+    text-align: center;
+}
+.blockInfo > p {
+
+}
+.blockInfo > button {
+
+}

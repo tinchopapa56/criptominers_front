@@ -1,0 +1,11 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: rgba(31,41,55); */
+    background-color: var(--colorLight);
+    /* opacity: var(--opacity); */
+}
+.navbar > img {
+    width: 20%;
+}

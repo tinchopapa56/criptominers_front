@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import {Routes, Route, Navigate} from "react-router"
+import Landing from "./components/views/Landing/Landing"
+import Home from "./components/views/Home/Home"
+import Soldiers from "./components/views/Home/sections/Soldiers"
+import Ships from "./components/views/Home/sections/Ships"
+import Marketplace from "./components/views/Home/sections/Marketplace"
+import Planets from "./components/views/Home/sections/Planets"
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+
+        <Route path="home" element={<Home />} >
+          <Route index path="/home" element={<Navigate to="/home/soldiers" replace />} />
+          <Route path="soldiers" element={<Soldiers />} />
+
+          <Route path="/home/ships" element={<Ships />} />
+          <Route path="/home/planets" element={<Planets />} />
+          <Route path="/home/marketplace" element={<Marketplace />} />
+        </Route>
+
+      </Routes>
   );
 }
 
