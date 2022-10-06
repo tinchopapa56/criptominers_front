@@ -9,10 +9,9 @@ export default function Navbar() {
         <h2>fleet</h2>
         
         <div>
-          <h2>stake</h2>
-          <h2>Eteranl</h2>
+          <h2>Stake</h2>
+          <h2>Eternal</h2>
         </div>
-        <img />
     </div>
   )
 }
