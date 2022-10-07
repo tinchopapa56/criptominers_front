@@ -38,8 +38,9 @@ function Soldiers() {
 
       <section>
         {!workers ? ("No workers ") : (
-          workers.map((worker)=>{
+          workers.map((worker, i)=>{
             return <NftCard 
+              key={i}
               name={worker.name}
               uuid={worker.uuid}
               level={worker.level}

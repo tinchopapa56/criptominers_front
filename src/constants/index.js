@@ -1,8 +1,8 @@
-export const SOLDIER_CONTRACT_ADDRESS= "";
-export const SOLDIER_CONTRACT_ABI= "";
+export const SOLDIER_ADDRESS= "";
+export const SOLDIER_ABI= "";
 
-export const ETERNAL_CONTRACT_ADDRESS="0x1358c6eed7F8d8A0C6BF77F89649096dc7997C9c";
-export const ETERNAL_CONTRACT_ABI=[
+export const ETERNAL_ADDRESS="0x1358c6eed7F8d8A0C6BF77F89649096dc7997C9c";
+export const ETERNAL_ABI=[
     {
       "inputs": [
         {

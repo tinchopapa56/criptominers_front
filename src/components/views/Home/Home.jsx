@@ -9,11 +9,15 @@ import Web3Modal from "web3modal";
 import {ethers} from "ethers";
 import {useRef,useState,useEffect} from "react";
 // const {ethers} = require("ethers")
+import {
+  ETERNAL_ADDRESS,
+  ETERNAL_ABI
+} from "../../../constants/index"
 
 function Home() {
-
+  const zero = ethers.BigNumber.from(0);
   const [walletConected, setWalletConnected] = useState(false);
-  const [ethBalance, setEthBalance] = useState(0);
+  const [ethBalance, setEthBalance] = useState(zero);
   const web3ModalRef = useRef();
 
 
@@ -26,6 +30,7 @@ function Home() {
         disableInjectedProvider: false,
       });
       connectWallet();
+      getEthBalance();
     }
   },[walletConected])
 
@@ -55,16 +60,20 @@ function Home() {
   }
   /*END*/
 
-  // const getEthBalance = async()=>{
-  //   try{
-  //     //get balance metamask
-  //     //contract instance
+  const getEthBalance = async()=>{
+    try{
+      //get balance metamask
+      const provider = await getProviderOrSigner(true); // provider == metamask
+      const eternalContract = new ethers.Contract(ETERNAL_ADDRESS, ETERNAL_ABI, provider) //contract instance [para tener acceso a sus funciones]
 
-  //     setEthBalance();
-  //   }catch(err){
-  //     console.error(err);
-  //   }
-  // } 
+      const address = await provider.getAddress();
+      const balance = await eternalContract.balanceOf(address);
+      setEthBalance(balance);
+    }catch(err){
+      console.error(err);
+      setEthBalance(zero);
+    }
+  } 
 
 
   return (
