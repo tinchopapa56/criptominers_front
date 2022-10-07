@@ -14,13 +14,9 @@
     /* padding: 0 1em; */
   }
 
-.marketplace{
-    background-color: var(--color1);
-}
-
 /**/
 .soldiers{
-    background-color: var(--colorDark);
+    background-color: var(--color_dark);
     height: 100vh;
     color: white;
 }
@@ -45,11 +41,26 @@
         align-items: center ;
     }
 }
-/* */
+/**/
+.claimFunds{
+    background-color: var(--color_dark);
+    color: white;
+    min-height: 100%;
+    
+}
 .shuttles{
-    background-color: var(--color1);
+    background-color: var(--color_dark);
+    color: white;
+    min-height: 100%;
 }
 .planets{
-    background-color: var(--color1);
+    background-color: var(--color_dark);
+    color: white;
+    min-height: 100%;
 }
 
+.marketplace{
+    background-color: var(--color_dark);
+    color: white;
+    min-height: 100%;
+}

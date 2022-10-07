@@ -4,6 +4,8 @@ import {ethers} from "ethers";
 import Web3Modal from "web3modal";
 import { useEffect } from 'react';
 
+import "../Home.css"
+
 
 
 
@@ -22,7 +24,6 @@ function ClaimFunds() {
     getEternalBalance();
   },[])
 
-  
   const getProviderOrSigner = async (needSigner = false) => {
     const provider = await web3ModalRef.current.connect();
     const web3Provider = new ethers.providers.Web3Provider(provider);
@@ -38,7 +39,6 @@ function ClaimFunds() {
     }
     return web3Provider; //METAMASK connection-ref
   }
-
   const claimFREETokens = async ()=>{
     const signer = await getProviderOrSigner(true);
     const eternalToken= new ethers.Contract(ETERNAL_ADDRESS, ETERNAL_ABI, signer);
@@ -70,9 +70,9 @@ function ClaimFunds() {
   }
 
   return (
-    <div>
+    <div className="claimFunds">
       <h1>Claim funds to try the app</h1>
-      <button onClick={()=>{claimFREETokens()}}>Claim Tokens</button>
+      <button onClick={()=>{claimFREETokens()}}>CLAIM TOKENS</button>
 
       <h2>Tenes {loading ? ("loading papa") : (eternalBalance)} eternals</h2>
     </div>
