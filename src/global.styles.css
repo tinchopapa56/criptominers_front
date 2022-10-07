@@ -4,7 +4,7 @@
     --colorLight: #2f3b4d;
     --colorDark: #111827;
     --color3: #6366E5;
-    /* --opacity: 0.9; */
+    --borderRadius: 2%;
 }
 body{
     margin: 0;

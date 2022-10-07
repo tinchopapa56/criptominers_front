@@ -11,7 +11,7 @@
     /* gap: 4em; */
     height: 100%;
     width: 100%;
-    padding: 0 1em;
+    /* padding: 0 1em; */
   }
 
 .marketplace{
@@ -21,12 +21,18 @@
 /**/
 .soldiers{
     background-color: var(--colorDark);
+    height: 100vh;
     color: white;
 }
 .soldiers > div {
     border: dashed 2px salmon;
     display: flex;
     justify-content: space-around;
+    /* padding: 2em; */
+}
+.soldiers__middle {
+    justify-content: space-between;
+    /* background-color: green; */
 }
 .soldiers > section {
     display: grid;

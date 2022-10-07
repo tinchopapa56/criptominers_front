@@ -8,10 +8,10 @@ export default function Navbar() {
         <img id="logo" src={Logo} />
         <h2>fleet</h2>
         
-        <div>
+        {/* <div> */}
           <h2>Stake</h2>
           <h2>Eternal</h2>
-        </div>
+        {/* </div> */}
     </div>
   )
 }
