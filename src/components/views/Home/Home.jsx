@@ -34,7 +34,7 @@ function Home() {
     }
   },[walletConected])
 
-  const getProviderOrSigner = async (needSigner = false)=>{
+  const getProviderOrSigner = async (needSigner = false) => {
     const provider = await web3ModalRef.current.connect();
     const web3Provider = new ethers.providers.Web3Provider(provider);
 
@@ -58,7 +58,7 @@ function Home() {
       console.error(err);
     }
   }
-  /*END*/
+  /*END m Connection*/
 
   const getEthBalance = async()=>{
     try{
