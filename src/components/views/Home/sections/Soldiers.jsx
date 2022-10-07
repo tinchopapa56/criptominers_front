@@ -23,21 +23,24 @@ function Soldiers() {
   return (
     <div className='soldiers'>
       <div>
-        <BlockInfo text="Mint worker" button="MINT" />
+        <BlockInfo text="Mint worker" button="MINT QUANTITY" />
         <BlockInfo text="Current Workers" />
         <BlockInfo text="Mining Power" />
       </div>
 
-      <div>
-        <p>Filter by Worker Rarity:</p>
+      <div className='soldiers__middle'>
+        <div>
+          <p>Filter by Worker Rarity:</p>
+          <p>cosito de paginacion</p>
+        </div>
         <p>Lupita con Debounce</p>
-        <p>cosito de paginacion</p>
       </div>
 
       <section>
         {!workers ? ("No workers ") : (
-          workers.map((worker)=>{
+          workers.map((worker, i)=>{
             return <NftCard 
+              key={i}
               name={worker.name}
               uuid={worker.uuid}
               level={worker.level}

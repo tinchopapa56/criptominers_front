@@ -17,7 +17,9 @@ export const Planets = (props) => (
 
 export const Soldiers = (props) => (
     <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-labelledby="title" aria-describedby="desc" role="img" class="w-[24px] h-[24px] fill-current text-gray-500">
-        <path data-name="layer2" d="M32 53.2l-24-10V51l24 10 24-10v-7.8l-24 10z"></path><path data-name="layer2" d="M56 38.8v-5.6l-24 10-24-10v5.6l24 10 24-10z"></path><path data-name="layer2" d="M8 23.2v5.6l24 10 24-10v-5.6l-24 10-24-10z"></path><path data-name="layer1" d="M32 28.8l24-10V3H8v15.8l24 10z">
-        </path>
+        <path data-name="layer2" d="M32 53.2l-24-10V51l24 10 24-10v-7.8l-24 10z"></path>
+        <path data-name="layer2" d="M56 38.8v-5.6l-24 10-24-10v5.6l24 10 24-10z"></path>
+        <path data-name="layer2" d="M8 23.2v5.6l24 10 24-10v-5.6l-24 10-24-10z"></path>
+        <path data-name="layer1" d="M32 28.8l24-10V3H8v15.8l24 10z"> </path>
     </svg>
 )

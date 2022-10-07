@@ -5,7 +5,7 @@ import Soldiers from "./components/views/Home/sections/Soldiers"
 import Ships from "./components/views/Home/sections/Ships"
 import Marketplace from "./components/views/Home/sections/Marketplace"
 import Planets from "./components/views/Home/sections/Planets"
-
+import ClaimFunds from "./components/views/Home/sections/ClaimFunds"
 
 function App() {
   return (
@@ -19,6 +19,7 @@ function App() {
           <Route path="/home/ships" element={<Ships />} />
           <Route path="/home/planets" element={<Planets />} />
           <Route path="/home/marketplace" element={<Marketplace />} />
+          <Route path="/home/claimFunds" element={<ClaimFunds />} />
         </Route>
 
       </Routes>

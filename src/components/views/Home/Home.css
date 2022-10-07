@@ -11,21 +11,24 @@
     /* gap: 4em; */
     height: 100%;
     width: 100%;
-    padding: 0 1em;
+    /* padding: 0 1em; */
   }
-
-.marketplace{
-    background-color: var(--color1);
-}
 
 /**/
 .soldiers{
-    background-color: var(--color1);
+    background-color: var(--color_dark);
+    height: 100vh;
+    color: white;
 }
 .soldiers > div {
     border: dashed 2px salmon;
     display: flex;
     justify-content: space-around;
+    /* padding: 2em; */
+}
+.soldiers__middle {
+    justify-content: space-between;
+    /* background-color: green; */
 }
 .soldiers > section {
     display: grid;
@@ -38,11 +41,26 @@
         align-items: center ;
     }
 }
-/* */
+/**/
+.claimFunds{
+    background-color: var(--color_dark);
+    color: white;
+    min-height: 100%;
+    
+}
 .shuttles{
-    background-color: var(--color1);
+    background-color: var(--color_dark);
+    color: white;
+    min-height: 100%;
 }
 .planets{
-    background-color: var(--color1);
+    background-color: var(--color_dark);
+    color: white;
+    min-height: 100%;
 }
 
+.marketplace{
+    background-color: var(--color_dark);
+    color: white;
+    min-height: 100%;
+}
