@@ -14,7 +14,9 @@ import {
   ETERNAL_ABI
 } from "../../../constants/index"
 
+
 function Home() {
+
   const zero = ethers.BigNumber.from(0);
   const [walletConected, setWalletConnected] = useState(false);
   const [ethBalance, setEthBalance] = useState(zero);
