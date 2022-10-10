@@ -26,7 +26,7 @@ export default function Navbar(props) {
           <button>
             <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">
               <img src={Play} alt=""/>
-              .efsfd
+              es
             </a>
           </button>
         </div>
