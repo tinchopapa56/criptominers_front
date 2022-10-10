@@ -7,8 +7,13 @@ import Play from "../../svgs/play.svg"
 import Fleet from "../../svgs/fleet.svg"
 import {FontAwesomeIcon} from "@fortawesome/fontawesome-svg-core"
 
+import { ethers } from 'ethers'
 
 export default function Navbar(props) {
+  const notBigNumber= ethers.utils.formatEther(props.tokenBalance);
+  const eternal = Math.floor(notBigNumber);
+
+
   return (
     <div className='navbar'>
         
@@ -35,7 +40,7 @@ export default function Navbar(props) {
           <div>
             <img src="https://legacy.cryptomines.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Feternal-logo.ff860841.png&w=32&q=75"/>
             <div>
-              <h4>0$ ETL</h4>
+              <h4>{eternal ? (eternal + "ETL"):("0 ETL")}</h4>
               <button>
               <img src={Address} alt=""/>
                 <p>address</p>

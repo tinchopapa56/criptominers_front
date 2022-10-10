@@ -14,32 +14,32 @@ function Sidebar() {
         <ul>
           <li>
             <Link to="/home/soldiers">
-              <Soldiers width="25px"/>
+              <Soldiers width="25px" fill="white"/>
               <p>SOLDIERS</p>
             </Link>
           </li>
           <li>
             <Link to="/home/ships">
-            <Ship width="25px" />
+            <Ship width="25px" fill="white"/>
               <p>SHUTTLES</p>
               
             </Link>
           </li>
           <li>
             <Link to="/home/planets">
-              <Planets width="25px" />
+              <Planets width="25px" fill="white" />
               <p>PLANETS</p>
             </Link>
           </li>
           <li>
             <Link to="/home/marketplace">
-              <Market width="25px" />
+              <Market width="25px" fill="white"/>
               <p>MARKET</p>
             </Link>
           </li>
           <li>
             <Link to="/home/claimFunds">
-              <Market width="25px" />
+              <Market width="25px" fill="white"/>
               <p>CLAIMFUNDS</p>
             </Link>
           </li>
