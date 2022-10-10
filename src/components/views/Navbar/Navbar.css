@@ -2,10 +2,35 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* background-color: rgba(31,41,55); */
     background-color: var(--color_light);
-    /* opacity: var(--opacity); */
+    padding: 0 1em;
 }
-.navbar > img {
-    width: 20%;
+.navbar > div > img{
+    width: 25%;
 }
+.navbar > div > button > img {
+    width: 20px;
+}
+.navbar > div {
+    display: flex;
+    gap: 2em;
+    /* justify-content: space-around; */
+    border: solid 3px blue;
+    align-items: center; /*stretch*/
+}
+.navbar > div > button {
+    border: 3px solid rgb(224, 74, 224);
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    padding: .5em;
+}
+.navbar > div > div {
+    display: flex;
+    align-items: center;
+    border: 3px solid red;
+}
+.navbar > div > div > div {
+    align-items: center;
+    border: 3px solid red;
+} 
