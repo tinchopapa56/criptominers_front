@@ -3,13 +3,22 @@
     align-items: center;
     justify-content: space-between;
     background-color: var(--color_light);
-    padding: 0 1em;
+    /* padding: 0 1em; */
+    /* margin: 0; */
+}
+.navbar p {    margin: 0;}
+.navbar h4 {   margin: 0;}
+
+.navbar > div {
+    display: flex;
+    justify-content: space-between;
+    border: solid 3px blue;
 }
 .navbar > div > img{
-    width: 25%;
+    width: 35%;
 }
 .navbar > div > button > img {
-    width: 20px;
+    width: 15px;
 }
 .navbar > div {
     display: flex;
@@ -22,15 +31,35 @@
     border: 3px solid rgb(224, 74, 224);
     display: flex;
     align-items: center;
-    gap: .5em;
-    padding: .5em;
+    gap: .5rem;
+    /* padding:  1em; */
 }
-.navbar > div > div {
+
+/*last div*/
+
+.last__div {
     display: flex;
     align-items: center;
     border: 3px solid red;
 }
-.navbar > div > div > div {
+.last__div > img {
+    /* width: 30px; */
+    min-height: 20px ;
+    margin-right: 0.5em;
+}
+.last__div > div {
     align-items: center;
-    border: 3px solid red;
+    justify-content: center;
+    /* width: 1000px; */
+    border: 3px solid lightblue;
+} 
+.last__div > div > button {
+    display: flex;
+    align-items: center;
+    padding: .25em 0.5em;
+    width: 100%;
+    gap: 0.50rem;
+}
+.last__div > div > button > img {
+    width: 15px;
 } 
