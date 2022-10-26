@@ -1,5 +1,6 @@
 import React from 'react'
 import "./Sidebar.css"
+import Logo from "../../../svgs/logo.svg"
 import {Link} from "react-router-dom"
 import {Ship, Market, Planets, Soldiers, ClaimFunds} from "../../../svgs/svgsSidebar"
 
@@ -8,10 +9,15 @@ function Sidebar() {
   return (
     <div className="sidebar">
       <div className="sidebar__chuncks">
-        <div>
-
-        </div>
+      
+        {/* <div>
+  
+        </div> */}
         <ul>
+          <li>
+          <img id="logo" src={Logo} />
+          </li>
+          {/* <img id="logo" src={Logo} /> */}
           <li>
             <Link to="/home/soldiers">
               <Soldiers width="25px" fill="white"/>

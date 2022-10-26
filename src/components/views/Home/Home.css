@@ -1,20 +1,23 @@
 .home{
     height: 100vh;
+    display: flex;
 }
 .home-container{
-    height: 92vh;
-    display: flex;
+    /* height: 92vh; */
+    width: 100%;
 }
 .content-container {
     display: flex;
     flex-direction: column;
-    /* gap: 4em; */
-    height: 100%;
-    width: 100%;
-    /* padding: 0 1em; */
-  }
+    /* height: 100%; */
+    /* width: 100%; */
+    /* width: 80%; */
+}
 
-/**/
+
+
+/*COMPONENTS*/
+
 .soldiers{
     background-color: var(--color_dark);
     height: 100vh;
@@ -64,3 +67,23 @@
     color: white;
     min-height: 100%;
 }
+
+
+/*ANTIGUO*/
+/*
+.home{
+    height: 100vh;
+}
+.home-container{
+    height: 92vh;
+    display: flex;
+}
+.content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4em; NOOOOO
+    height: 100%;
+    width: 100%;
+    padding: 0 1em; NOOOOO
+}
+*/

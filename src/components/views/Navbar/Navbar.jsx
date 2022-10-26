@@ -18,32 +18,29 @@ export default function Navbar(props) {
     <div className='navbar'>
         
         <div>
-          <img id="logo" src={Logo} />
+          {/* <img id="logo" src={Logo} /> */}
+          <button>
+              <img src={Play} alt=""/>
+          </button>
           <button>
             <img src={Fleet} alt="" /> 
             <p>Create Fleet</p>
           </button>
-          <button>
-            <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">
-              <img src={Play} alt=""/>
-              es
-            </a>
-          </button>
         </div>
         
         <div>
-          <button>Stake</button>
+          <button>Stake $ETERNAL</button>
           <button>
-          <img src={Arrow} alt=""/>
-            <p>Claim {props.unclaimedBalance} $ETERNAL</p>
+            <img src={Arrow} alt=""/>
+            <p>Claim {props.unclaimedBalance ? props.unclaimedBalance : "0" } $ETERNAL</p>
           </button>
-          <div>
+          <div className='last__div'>
             <img src="https://legacy.cryptomines.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Feternal-logo.ff860841.png&w=32&q=75"/>
             <div>
-              <h4>{eternal ? (eternal + "ETL"):("0 ETL")}</h4>
+              <h4>{eternal ? (eternal + "$ETL"):("0 $ETL")}</h4>
               <button>
-              <img src={Address} alt=""/>
-                <p>address</p>
+                <img src={Address} alt=""/>
+                <p>...</p>
               </button>
             </div>
           </div>

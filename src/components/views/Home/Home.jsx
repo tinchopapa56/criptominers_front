@@ -77,12 +77,23 @@ function Home() {
     }
   } 
 
-
+  /* ANTIGUO */
+  // return (
+  //   <div className="home">
+  //       <Navbar tokenBalance={ethBalance} />
+  //       <div className="home-container">
+  //         <Sidebar />
+  //         <div className="content-container">
+  //           <Outlet />
+  //         </div>
+  //       </div>
+  //   </div>
+  // )
   return (
     <div className="home">
-        <Navbar tokenBalance={ethBalance} />
+        <Sidebar />
         <div className="home-container">
-          <Sidebar />
+          <Navbar tokenBalance={ethBalance} />
           <div className="content-container">
             <Outlet />
           </div>

@@ -17,6 +17,9 @@ body{
     font-family: "Poppins";
     color: var(--color_text);
 }
+p{
+    /* margin: 0; */
+}
 button{
     background-color: var(--color_buttons);
     padding: 0.5em 1em;
