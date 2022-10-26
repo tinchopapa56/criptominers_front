@@ -9,10 +9,8 @@ import Web3Modal from "web3modal";
 import {ethers} from "ethers";
 import {useRef,useState,useEffect} from "react";
 // const {ethers} = require("ethers")
-import {
-  ETERNAL_ADDRESS,
-  ETERNAL_ABI
-} from "../../../constants/index"
+import {  ETERNAL_ADDRESS, ETERNAL_ABI, SOLDIERS_ABI, SOLDIERS_ADDRESS} from "../../../constants/index"
+
 
 
 function Home() {
@@ -20,6 +18,7 @@ function Home() {
   const zero = ethers.BigNumber.from(0);
   const [walletConected, setWalletConnected] = useState(false);
   const [ethBalance, setEthBalance] = useState(zero);
+  const [SoldiersNFTContract, setSoldiersNFTContract] = useState("SIMPLE STRING TO TRY PASSING")
   const web3ModalRef = useRef();
 
 
@@ -33,6 +32,7 @@ function Home() {
       });
       connectWallet();
       getEthBalance();
+      getContracts();
     }
   },[walletConected])
 
@@ -51,7 +51,21 @@ function Home() {
     }
     return web3Provider; //METAMASK connection-ref
   }
+  const getContracts = async() =>{
+    try{
+      //get balance metamask
+      const provider = await getProviderOrSigner(true);
+      const soldiersContract = new ethers.Contract(SOLDIERS_ADDRESS, SOLDIERS_ABI,provider)
+      
+      setSoldiersNFTContract(soldiersContract);
+    }catch(err){
+      console.error(err);
+      setSoldiersNFTContract({standard:"bien pa"});
+    }
+    
 
+    
+  }
   const connectWallet = async ()=>{
     try{
       await getProviderOrSigner();
@@ -77,25 +91,13 @@ function Home() {
     }
   } 
 
-  /* ANTIGUO */
-  // return (
-  //   <div className="home">
-  //       <Navbar tokenBalance={ethBalance} />
-  //       <div className="home-container">
-  //         <Sidebar />
-  //         <div className="content-container">
-  //           <Outlet />
-  //         </div>
-  //       </div>
-  //   </div>
-  // )
   return (
     <div className="home">
         <Sidebar />
         <div className="home-container">
           <Navbar tokenBalance={ethBalance} />
           <div className="content-container">
-            <Outlet />
+            <Outlet context={[SoldiersNFTContract, setSoldiersNFTContract]} />
           </div>
         </div>
     </div>

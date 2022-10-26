@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import BlockInfo from "../BlockInfo/BlockInfo"
 import NftCard from '../NftCard/NftCard';
 import "../Home.css"
+import { ethers } from 'ethers';
+import { useOutletContext } from "react-router-dom";
 
 
 function Soldiers() {
@@ -19,11 +21,29 @@ function Soldiers() {
     img: "https://assets.weforum.org/article/image/responsive_big_webp_q8bpN98uMnTEXttXMZCBU8X0kmDdUSHvsmA9JO18-hs.webp",
     power: "129"
   }]);
+  const [soldierContract, setSoldierContract] = useOutletContext();;
+  const [soldierNFTs, setSoldierNFTs] = useState([])
+
+  // const getSoldiers = async()=>{
+  //   const soldiers = soldierContract.getTheNFTS();
+  //   //FALTA ESE METODO
+  //   setSoldierNFTs(soldiers);
+  // }
+  const mint = async()=>{
+    // const mintResult = await soldierContract.mint();
+    alert(soldierContract)
+    console.log(soldierContract)
+    //FALTA
+  }
 
   return (
     <div className='soldiers'>
       <div>
-        <BlockInfo text="Mint worker" button="MINT QUANTITY" />
+        <button></button>
+        <div className="blockInfo">
+          <p>Mint worker</p>
+          <button onClick={()=>mint()}>MINT QUANTITY</button>
+        </div>
         <BlockInfo text="Current Workers" />
         <BlockInfo text="Mining Power" />
       </div>
