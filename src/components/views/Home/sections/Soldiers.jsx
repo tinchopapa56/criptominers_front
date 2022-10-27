@@ -30,9 +30,15 @@ function Soldiers() {
   //   setSoldierNFTs(soldiers);
   // }
   const mint = async()=>{
-    // const mintResult = await soldierContract.mint();
-    alert(soldierContract)
     console.log(soldierContract)
+    
+    const mintResult = await soldierContract.mint("www.ALGO.com");
+    const seeTokenCount = await soldierContract.tokenCount();
+    const seeTokenCountFORMAT = ethers.utils.formatEther(seeTokenCount)
+    await mintResult.wait()
+
+    console.log("termino el minting");
+    console.log(seeTokenCountFORMAT);
     //FALTA
   }
 
@@ -63,8 +69,8 @@ function Soldiers() {
               key={i}
               name={worker.name}
               uuid={worker.uuid}
-              level={worker.level}
-              img={worker.img} 
+              rarity={worker.rarity} //SEGUN EL RARITY, le pongo 1 de las 3 fotos
+              // img={worker.img}  
               power={worker.power}
             />
           })

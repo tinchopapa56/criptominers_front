@@ -7,8 +7,6 @@ import { useEffect } from 'react';
 import "../Home.css"
 
 
-
-
 function ClaimFunds() {
   const [loading, setLoading] = useState(false);
   const [eternalBalance, setEternalBalance] = useState(0);
