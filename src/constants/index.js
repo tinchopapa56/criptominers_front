@@ -1,5 +1,5 @@
 /*Goerli*/
-export const SOLDIERS_ADDRESS= "0xab8165f6405c91c8222a68b225Ca2B4b4fC64C70";
+export const SOLDIERS_ADDRESS= "0x058caC1A8f86001bDD92365B630E7E744ce522E8";
 export const SOLDIERS_ABI= [
   {
     "inputs": [],
@@ -444,7 +444,7 @@ export const SOLDIERS_ABI= [
   }
 ];
 
-export const ETERNAL_ADDRESS="0x1f10d33307c66a024e5EeB4e928656B5a202344C";
+export const ETERNAL_ADDRESS="0x89348bB508BdE1EAf66d79e0584beFE7a31FA6D8";
 export const ETERNAL_ABI=[
     {
       "inputs": [

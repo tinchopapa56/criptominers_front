@@ -5,6 +5,14 @@ import "../Home.css"
 import { ethers } from 'ethers';
 import { useOutletContext } from "react-router-dom";
 
+import {uploadJSON} from "../../../pinata/Pinata"
+import axios from 'axios';
+import { useEffect } from 'react';
+
+/* Ya funcona el mint, genial */
+// Ahora, como hago con el soldierContract.balanceOf()
+// en el front: 
+// Y consiog el array para mapear cada nft y su metadata 
 
 function Soldiers() {
 
@@ -21,18 +29,42 @@ function Soldiers() {
     img: "https://assets.weforum.org/article/image/responsive_big_webp_q8bpN98uMnTEXttXMZCBU8X0kmDdUSHvsmA9JO18-hs.webp",
     power: "129"
   }]);
-  const [soldierContract, setSoldierContract] = useOutletContext();;
+  const [soldierContract, setSoldierContract] = useOutletContext();
   const [soldierNFTs, setSoldierNFTs] = useState([])
 
-  // const getSoldiers = async()=>{
-  //   const soldiers = soldierContract.getTheNFTS();
-  //   //FALTA ESE METODO
-  //   setSoldierNFTs(soldiers);
-  // }
+  const getSoldiers = async()=>{
+    const soldiers = await soldierContract.getMyNfts();
+    let myNFTs = await Promise.all(
+      soldiers.map(async (eachToken)=>{
+        const tokenURI = await soldierContract.tokenURI(eachToken);
+        let metadata = await axios.get(tokenURI);
+        console.log(metadata);
+        // return {
+        //   id: i,
+
+        // }
+      })
+    )
+    return myNFTs
+    // setSoldierNFTs(soldiers);
+  }
+  const uploadMetadataToIPFS = async() => {
+    try {
+      const res = await uploadJSON();
+      if(res.success === true){
+        console.log("Uploaded JSON to Pinata: ", res)
+        return res.pinataURL;
+      }
+    } catch(e) { console.log("error uploading JSON metadata:", e) }
+  }
   const mint = async()=>{
     console.log(soldierContract)
-    
-    const mintResult = await soldierContract.mint("www.ALGO.com");
+
+    /*This function uploads the metadata to IPFS*/
+    const tokenURI = uploadMetadataToIPFS();
+
+    /*Soldier contract CONSUMPTION*/
+    const mintResult = await soldierContract.mint(tokenURI); //ACA PASARLE EL URI , ergo arriba tengo que hacer el ipfs upload
     const seeTokenCount = await soldierContract.tokenCount();
     const seeTokenCountFORMAT = ethers.utils.formatEther(seeTokenCount)
     await mintResult.wait()
@@ -41,6 +73,10 @@ function Soldiers() {
     console.log(seeTokenCountFORMAT);
     //FALTA
   }
+
+  useEffect(() => {
+    getSoldiers();
+  }, [])
 
   return (
     <div className='soldiers'>
