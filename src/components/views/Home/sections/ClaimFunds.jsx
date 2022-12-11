@@ -20,6 +20,7 @@ function ClaimFunds() {
     })
     console.log("effect ejecutado: se creo Web3modal{}");
     getEternalBalance();
+    console.log(eternalBalance)
   },[])
 
   const getProviderOrSigner = async (needSigner = false) => {
@@ -61,10 +62,11 @@ function ClaimFunds() {
     const eternalContract = new ethers.Contract(ETERNAL_ADDRESS, ETERNAL_ABI, signer);
     const address = await signer.getAddress();
     const _BIGeternalBalance = await eternalContract.balanceOf(address);
-    const _eternalBalance = ethers.utils.formatEther(_BIGeternalBalance)
+    const _eternalBalance = _BIGeternalBalance.toNumber();
     setLoading(true);
     setEternalBalance(Math.floor(_eternalBalance));
     setLoading(false);
+    console.log(_BIGeternalBalance)
   }
 
   return (
